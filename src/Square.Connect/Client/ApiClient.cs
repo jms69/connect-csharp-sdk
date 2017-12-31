@@ -11,12 +11,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Text.RegularExpressions;
 using System.IO;
-using System.Web;
 using System.Linq;
-using System.Net;
 using System.Text;
 using Newtonsoft.Json;
 using RestSharp;
@@ -53,7 +50,7 @@ namespace Square.Connect.Client
         public ApiClient()
         {
             Configuration = Configuration.Default;
-            RestClient = new RestClient("https://connect.squareup.com");
+            RestClient = new RestClient("https://connect.squareup.com");            
         }
 
         /// <summary>
@@ -68,7 +65,7 @@ namespace Square.Connect.Client
             else
                 Configuration = config;
 
-            RestClient = new RestClient("https://connect.squareup.com");
+            RestClient = new RestClient("https://connect.squareup.com");            
         }
 
         /// <summary>
@@ -81,7 +78,7 @@ namespace Square.Connect.Client
            if (String.IsNullOrEmpty(basePath))
                 throw new ArgumentException("basePath cannot be empty");
 
-            RestClient = new RestClient(basePath);
+            RestClient = new RestClient(basePath);            
             Configuration = Configuration.Default;
         }
 
@@ -131,7 +128,7 @@ namespace Square.Connect.Client
 
             // add file parameter, if any
             foreach(var param in fileParams)
-            {
+            {                
                 request.AddFile(param.Value.Name, param.Value.Writer, param.Value.FileName, param.Value.ContentLength, param.Value.ContentType);
             }
 

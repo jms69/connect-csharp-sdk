@@ -185,3 +185,4 @@ $RECYCLE.BIN/
 **/*.sln.ide
 
 travis-ci/accounts.json
+/.vs
